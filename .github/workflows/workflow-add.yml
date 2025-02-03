@@ -26,4 +26,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Add Tests
-        run: pytest -k "test_add"
+        run: pytest -k "test_app"
