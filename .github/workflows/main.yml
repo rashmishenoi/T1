@@ -1,4 +1,4 @@
-# .github/workflows/hello-world.yml
+# .github/workflows/main.yml
 name: Hello World Workflow
 on: [push]  
 jobs:
