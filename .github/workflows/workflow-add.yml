@@ -1,0 +1,29 @@
+# .github/workflows/workflow-add.yml
+name: Add Workflow
+
+on: [push, pull_request]
+
+jobs:
+  job-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: pip install pytest
+
+  job-test-add:
+    runs-on: ubuntu-latest
+    needs: job-setup
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Add Tests
+        run: pytest -k "test_add"
